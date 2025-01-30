@@ -87,6 +87,25 @@ namespace AQICsharp
 
             var usingLambda = new UsingLambda();
             UsingLambda.PrintResult(lambda.Add, 10, 200);
+
+            //ASYNC PROGRAMMING
+
+            var asyncObj = new AyncProgramming();
+            asyncObj.FetchData().Wait();
+
+            var WhenAllObj = new WhenAllExample();
+            WhenAllObj.FetchData(new AyncProgramming()).Wait();
+
+            Console.WriteLine("When Any Example");
+
+            var whenAnyObj = new WhenAnyExample();
+            whenAnyObj.FetchData(new AyncProgramming()).Wait();
+
+            //CUSTOM EXCEPTION
+
+            var customExceptionExample = new CustomExceptionExample();
+            customExceptionExample.Operation(10, 0);
+
         }
     }
 }
